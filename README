@@ -1,0 +1,30 @@
+Converts vim color schemes to Visual Studio color schemes.
+
+Note: This is incomplete. It worked well enough for me to get the wombat
+color scheme for editing C++ but I haven't done any testing beyond that.
+There are even random hard coded colors in the template I didn't bother
+to replace. Changes welcome.
+
+Usage: cs-vimtovs.py [options]
+
+Options:
+  -h, --help            show this help message and exit
+  -f FONT, --font=FONT  font face
+  -p FONTSIZE, --fontsize=FONTSIZE
+                        font point size
+  -m VIM_COLORSCHEME, --vim=VIM_COLORSCHEME
+                        vim colorscheme file
+  -s VS_COLORSCHEME, --vs=VS_COLORSCHEME
+                        visual studio colorscheme file to output
+
+Example:
+  $ python cs-vimtovs.py --font="Bitstream Vera Sans Mono" \
+                         --fontsize=10 \
+                         --vim=desert.vim \
+                         --vs=desert.vssettings
+    
+
+Typically you'd want to use a filename with the extension .vssettings
+for the VS_COLORSCHEME file because that's what Visual Studio expects.
+After you've created your .vssettings file import the settings using
+"Tools > Import and Export Settings..." from within Visual Studio.
